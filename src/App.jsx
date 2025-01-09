@@ -7,21 +7,6 @@ import axios from './axiosConfig'
 
 const App = () => {
 
-  const Navigate = useNavigate
-  async function checkuser(){
-     try {
-      await axios.get('/user/check')
-     } catch (error) {
-      console.log(error.response);
-      Navigate('/login')
-     }
-  }
-
-  useEffect(()=>{
-    checkuser();
-  },[])
-
-
   return (
     <Routes>
       <Route path='/' element={<Home/>}/>
